@@ -17,7 +17,7 @@ This is the PHP Library for Paytabs to integrate the paytabs payment gateway int
    $this->load->library('paytabs',$params);
 ```  
 ###### Create Paypage : --  
-####### Create array of customer data and item to create paypage
+###### Create array of customer data and item to create paypage
 ```  
   $values=  array(
     //PayTabs Merchant Account Details
