@@ -6,9 +6,9 @@ This Paytabs codeigniter library is for  integrating  paytabs payment gateway in
 
 
 ###### Load library 
- ```   
+```   
    $merchant_email='YOUR_REGISTERED_EMAIL';
-   $secret_key='YOUR_SECRET_KEY_COPIED_FROM_PAYTABS_DASHBOARD';
+   $secret_key='YOUR_SECRET_KEY';
    $merchant_id='MERCHANT_ID';
 
    $params=array('merchant_email'=>$merchant_email,
@@ -20,12 +20,12 @@ This Paytabs codeigniter library is for  integrating  paytabs payment gateway in
 ###### Create Paypage request: --  
 ###### Create array of customer data and order details to create paypage link
 ```  
-  $values=  array(
+  $request_data=  array(
     //PayTabs Merchant Account Details
 	//Customer's Personal Information
-	'title' => "John Doe", 			// Customer's Name on the invoice
-	'cc_first_name' => "John", 		//This will be prefilled as Credit Card First Name
-    'cc_last_name' => "Doe", 		//This will be prefilled as Credit Card Last Name
+	'title' => "Naseem Fasal", 			// Customer's Name on the invoice
+	'cc_first_name' => "Naseem", 		//This will be prefilled as Credit Card First Name
+    'cc_last_name' => "Fasal", 		//This will be prefilled as Credit Card Last Name
 	'email' => "customer@email.com",
     'cc_phone_number' => "973",
 	'phone_number' => "33333333",
@@ -41,32 +41,26 @@ This Paytabs codeigniter library is for  integrating  paytabs payment gateway in
    
     //Customer's Shipping Address (All fields are mandatory)
 	
-	'address_shipping' => "Juffair, Manama, Bahrain",
+	'address_shipping' => "Muharaq, Manama, Bahrain",
     'city_shipping' => "Manama",
     'state_shipping' => "Capital",
     'postal_code_shipping' => "97300",
     'country_shipping' => "BHR",
-   
     //Product Information
-    "products_per_title"=>"Mobile Phone", //Product title of the product. If multiple products then add “||” separator
-    'currency' => "BHD",				//Currency of the amount stated. 3 character ISO currency code 
-	"unit_price"=>"10",					//Unit price of the product. If multiple products then add “||” separator.
-    'quantity' => "1",					//Quantity of products. If multiple products then add “||” separator
-	'other_charges' => "0",				//Additional charges. e.g.: shipping charges, taxes, VAT, etc.
-	'amount' => "10.00",  				//Amount of the products and other charges, it should be equal to: amount = (sum of all products’ (unit_price * quantity)) + other_charges
-										//This field will be displayed in the invoice as the sub total field
-
-	'discount'=>"0",					//Discount of the transaction. The Total amount of the invoice will be= amount - discount
-
-	
-	"msg_lang" => "english",			//Language of the PayPage to be created. Invalid or blank entries will default to English.(Englsh/Arabic)
-    
-    
-    "reference_no" => "1231231",		//Invoice reference number in your system
-    "site_url" => "https://www.clickfew.com", //The requesting website be exactly the same as the website/URL associated with your PayTabs Merchant Account
-    'return_url' => "https://www.clickfew.com/account/invoice/test_payment",
+    "products_per_title"=>"Test product", //Product title of the product. If multiple products then add “||” separator
+    'currency' => "BHD", //Currency of the amount stated. 3 character ISO currency code
+    "unit_price"=>"120", //Unit price of the product. If multiple products then add “||” separator.
+    'quantity' => "1",  //Quantity of products. If multiple products then add “||” separator
+    'other_charges' => "0",	//Additional charges. e.g.: shipping charges, taxes, VAT, etc.
+    'amount' => "120.00",  
+    'discount'=>"0", 
+    "msg_lang" => "english", //Language of the PayPage to be created.  default - English
+    "reference_no" => "1231231",//Invoice reference number in your system
+    "site_url" => "https://www.yourwebsite.com", //The requesting website be exactly the same as the website/URL associated with your PayTabs Merchant Account
+    'return_url' => "https://www.yourwebsite.com/payment_success_page",
     "cms_with_version" => "API USING PHP"
 );
+
 ```  
 ###### here you will get response from their server as Object.
 ```  
@@ -77,3 +71,7 @@ This Paytabs codeigniter library is for  integrating  paytabs payment gateway in
  echo $response->payment_url;   
  ```
    
+   
+ Feel free to send me an email if you have any problems.
+
+Thanks, - Naseem Fasal naseem at infiyo dot com  /  @naseemfasal 
