@@ -3,21 +3,22 @@ Paytabs codeigniter library
 
 This Paytabs codeigniter library is for  integrating  paytabs payment gateway into your website easily. This is developed with Paytab's latest API and supports Codeigniter  3.1.8 (Latest) and other old version. Also this library can be used with other Php application by loading the class directly instead of loading through CI's load library method, Because everything else is pure Php.
 
+
+
+###### Load library 
  ```   
    $merchant_email='YOUR_REGISTERED_EMAIL';
    $secret_key='YOUR_SECRET_KEY_COPIED_FROM_PAYTABS_DASHBOARD';
    $merchant_id='MERCHANT_ID';
-```     
-###### Load library 
-```  
+
    $params=array('merchant_email'=>$merchant_email,
                  'merchant_id'=>$merchant_id,
                  'secret_key'=>$secret_key);
                  
    $this->load->library('paytabs',$params);
 ```  
-###### Create Paypage : --  
-###### Create array of customer data and item to create paypage
+###### Create Paypage request: --  
+###### Create array of customer data and order details to create paypage link
 ```  
   $values=  array(
     //PayTabs Merchant Account Details
