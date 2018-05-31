@@ -1,7 +1,7 @@
 # Paytabs-codeigniter-library
 Paytabs codeigniter library
 
-This Paytabs codeigniter library is for  integrating  paytabs payment gateway into your website easily. This is developed with Paytab's latest API and supports Codeigniter  3.1.8 (Latest) and other old version. Also this library can be used with other Php application by loading the class directly instead of loading through CI's load library method, Because everything else is pure Php.
+This Paytabs codeigniter library is for  integrating  paytabs payment gateway into your website easily. This is developed with Paytab's latest API and supports Codeigniter  3.1.8 (Latest) and other old version. Also this library can be used with other Php application by loading the class directly instead of loading through CI's load library method, Because everything else is wroted in pure Php.
 
 ###### Upload Paytab.php into 'libraries' folder in your codeigniter directory.  
 
@@ -66,11 +66,12 @@ This Paytabs codeigniter library is for  integrating  paytabs payment gateway in
 ```  
  $response= $this->paytabs->create_pay_page($values);   
  ```  
-###### Redirect url for autherizing credit card and after that user will return to the return url provided above.   
+###### you will get Redirect url for autherizing credit card from the response like below.   
 ```  
  echo $response->payment_url;   
+ 
  ```
-   
+   For detailed docuemntation about their api usage, Please reffer to : http://developers.paytabs.com/docs-apis/#rest-api
    
  Feel free to send me an email if you have any problems.
 
